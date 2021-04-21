@@ -51,7 +51,7 @@ java_proto_library(
 ##############################################################################
 # Go
 ##############################################################################
-ssz_gen_marshal(
+ssz_gen_marshalorigin m(
     name = "ssz_generated_files",
     go_proto = ":go_proto",
     includes = [
