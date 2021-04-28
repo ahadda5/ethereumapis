@@ -3295,9 +3295,11 @@ func (e *ExecutionPayload) HashTreeRootWith(hh *ssz.Hasher) (err error) {
 			return
 		}
 		for i := uint64(0); i < num; i++ {
+			txSubIndx := hh.Index()
 			hh.PutBytes(e.Transactions[i])
+			hh.MerkleizeWithMixin(txSubIndx, num, 1048576)
 		}
-		hh.MerkleizeWithMixin(subIndx, num, 0)
+		hh.MerkleizeWithMixin(subIndx, num, 16384)
 	}
 
 	hh.Merkleize(indx)
