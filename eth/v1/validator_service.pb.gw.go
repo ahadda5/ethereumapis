@@ -53,7 +53,9 @@ func request_BeaconValidator_GetAttesterDuties_0(ctx context.Context, marshaler 
 
 	_, _ = val, ok
 
-	_, _ = val, ok
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -80,7 +82,9 @@ func local_request_BeaconValidator_GetAttesterDuties_0(ctx context.Context, mars
 
 	_, _ = val, ok
 
-	_, _ = val, ok
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -93,10 +97,6 @@ func local_request_BeaconValidator_GetAttesterDuties_0(ctx context.Context, mars
 	return msg, metadata, err
 
 }
-
-var (
-	filter_BeaconValidator_GetProposerDuties_0 = &utilities.DoubleArray{Encoding: map[string]int{"epoch": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-)
 
 func request_BeaconValidator_GetProposerDuties_0(ctx context.Context, marshaler runtime.Marshaler, client BeaconValidatorClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProposerDutiesRequest
@@ -111,12 +111,7 @@ func request_BeaconValidator_GetProposerDuties_0(ctx context.Context, marshaler 
 
 	_, _ = val, ok
 
-	_, _ = val, ok
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BeaconValidator_GetProposerDuties_0); err != nil {
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -138,12 +133,7 @@ func local_request_BeaconValidator_GetProposerDuties_0(ctx context.Context, mars
 
 	_, _ = val, ok
 
-	_, _ = val, ok
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BeaconValidator_GetProposerDuties_0); err != nil {
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -169,7 +159,9 @@ func request_BeaconValidator_GetBlock_0(ctx context.Context, marshaler runtime.M
 
 	_, _ = val, ok
 
-	_, _ = val, ok
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -196,7 +188,9 @@ func local_request_BeaconValidator_GetBlock_0(ctx context.Context, marshaler run
 
 	_, _ = val, ok
 
-	_, _ = val, ok
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -282,10 +276,6 @@ func local_request_BeaconValidator_GetAggregateAttestation_0(ctx context.Context
 
 }
 
-var (
-	filter_BeaconValidator_SubmitAggregateAndProofs_0 = &utilities.DoubleArray{Encoding: map[string]int{"data": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-)
-
 func request_BeaconValidator_SubmitAggregateAndProofs_0(ctx context.Context, marshaler runtime.Marshaler, client BeaconValidatorClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AggregateAndProofsSubmit
 	var metadata runtime.ServerMetadata
@@ -295,13 +285,6 @@ func request_BeaconValidator_SubmitAggregateAndProofs_0(ctx context.Context, mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Data); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BeaconValidator_SubmitAggregateAndProofs_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -322,21 +305,10 @@ func local_request_BeaconValidator_SubmitAggregateAndProofs_0(ctx context.Contex
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BeaconValidator_SubmitAggregateAndProofs_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
 	msg, err := server.SubmitAggregateAndProofs(ctx, &protoReq)
 	return msg, metadata, err
 
 }
-
-var (
-	filter_BeaconValidator_SubmitBeaconCommitteeSubscription_0 = &utilities.DoubleArray{Encoding: map[string]int{"data": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-)
 
 func request_BeaconValidator_SubmitBeaconCommitteeSubscription_0(ctx context.Context, marshaler runtime.Marshaler, client BeaconValidatorClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq BeaconCommitteeSubscribeSubmit
@@ -347,13 +319,6 @@ func request_BeaconValidator_SubmitBeaconCommitteeSubscription_0(ctx context.Con
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Data); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BeaconValidator_SubmitBeaconCommitteeSubscription_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -371,13 +336,6 @@ func local_request_BeaconValidator_SubmitBeaconCommitteeSubscription_0(ctx conte
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Data); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BeaconValidator_SubmitBeaconCommitteeSubscription_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
