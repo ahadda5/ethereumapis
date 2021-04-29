@@ -87,16 +87,9 @@ func request_BeaconChain_GetStateRoot_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -121,16 +114,9 @@ func local_request_BeaconChain_GetStateRoot_0(ctx context.Context, marshaler run
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -159,16 +145,9 @@ func request_BeaconChain_GetStateFork_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -193,16 +172,9 @@ func local_request_BeaconChain_GetStateFork_0(ctx context.Context, marshaler run
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -231,16 +203,9 @@ func request_BeaconChain_GetFinalityCheckpoints_0(ctx context.Context, marshaler
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -265,16 +230,9 @@ func local_request_BeaconChain_GetFinalityCheckpoints_0(ctx context.Context, mar
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -303,27 +261,13 @@ func request_BeaconChain_GetValidator_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
-	val, ok = pathParams["validator_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "validator_id")
-	}
+	_, _ = val, ok
 
-	validator_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "validator_id", err)
-	}
-	protoReq.ValidatorId = (validator_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -348,27 +292,13 @@ func local_request_BeaconChain_GetValidator_0(ctx context.Context, marshaler run
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
-	val, ok = pathParams["validator_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "validator_id")
-	}
+	_, _ = val, ok
 
-	validator_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "validator_id", err)
-	}
-	protoReq.ValidatorId = (validator_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -397,16 +327,9 @@ func request_BeaconChain_ListValidators_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -431,16 +354,9 @@ func local_request_BeaconChain_ListValidators_0(ctx context.Context, marshaler r
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -469,16 +385,9 @@ func request_BeaconChain_ListValidatorBalances_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -503,16 +412,9 @@ func local_request_BeaconChain_ListValidatorBalances_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -541,27 +443,13 @@ func request_BeaconChain_ListCommittees_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
-	val, ok = pathParams["epoch"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "epoch")
-	}
+	_, _ = val, ok
 
-	epoch, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "epoch", err)
-	}
-	protoReq.Epoch = github_com_prysmaticlabs_eth2_types.Epoch(epoch)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -586,27 +474,13 @@ func local_request_BeaconChain_ListCommittees_0(ctx context.Context, marshaler r
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
-	val, ok = pathParams["epoch"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "epoch")
-	}
+	_, _ = val, ok
 
-	epoch, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "epoch", err)
-	}
-	protoReq.Epoch = github_com_prysmaticlabs_eth2_types.Epoch(epoch)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -635,16 +509,9 @@ func request_BeaconChain_GetBlockHeader_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -669,16 +536,9 @@ func local_request_BeaconChain_GetBlockHeader_0(ctx context.Context, marshaler r
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -795,16 +655,9 @@ func request_BeaconChain_GetBlock_0(ctx context.Context, marshaler runtime.Marsh
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -829,16 +682,9 @@ func local_request_BeaconChain_GetBlock_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -867,16 +713,9 @@ func request_BeaconChain_GetBlockRoot_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -901,16 +740,9 @@ func local_request_BeaconChain_GetBlockRoot_0(ctx context.Context, marshaler run
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -939,16 +771,9 @@ func request_BeaconChain_ListBlockAttestations_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -973,16 +798,9 @@ func local_request_BeaconChain_ListBlockAttestations_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["block_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "block_id")
-	}
+	_, _ = val, ok
 
-	block_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "block_id", err)
-	}
-	protoReq.BlockId = (block_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)

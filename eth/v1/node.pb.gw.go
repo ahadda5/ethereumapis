@@ -87,16 +87,9 @@ func request_BeaconNode_GetPeer_0(ctx context.Context, marshaler runtime.Marshal
 		_   = err
 	)
 
-	val, ok = pathParams["peer_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "peer_id")
-	}
+	_, _ = val, ok
 
-	peer_id, err := runtime.String(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "peer_id", err)
-	}
-	protoReq.PeerId = (peer_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -121,16 +114,9 @@ func local_request_BeaconNode_GetPeer_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["peer_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "peer_id")
-	}
+	_, _ = val, ok
 
-	peer_id, err := runtime.String(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "peer_id", err)
-	}
-	protoReq.PeerId = (peer_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)

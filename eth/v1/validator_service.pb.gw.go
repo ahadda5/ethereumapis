@@ -51,16 +51,9 @@ func request_BeaconValidator_GetAttesterDuties_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["epoch"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "epoch")
-	}
+	_, _ = val, ok
 
-	epoch, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "epoch", err)
-	}
-	protoReq.Epoch = github_com_prysmaticlabs_eth2_types.Epoch(epoch)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -85,16 +78,9 @@ func local_request_BeaconValidator_GetAttesterDuties_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["epoch"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "epoch")
-	}
+	_, _ = val, ok
 
-	epoch, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "epoch", err)
-	}
-	protoReq.Epoch = github_com_prysmaticlabs_eth2_types.Epoch(epoch)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -123,16 +109,9 @@ func request_BeaconValidator_GetProposerDuties_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["epoch"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "epoch")
-	}
+	_, _ = val, ok
 
-	epoch, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "epoch", err)
-	}
-	protoReq.Epoch = github_com_prysmaticlabs_eth2_types.Epoch(epoch)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -157,16 +136,9 @@ func local_request_BeaconValidator_GetProposerDuties_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["epoch"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "epoch")
-	}
+	_, _ = val, ok
 
-	epoch, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "epoch", err)
-	}
-	protoReq.Epoch = github_com_prysmaticlabs_eth2_types.Epoch(epoch)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -195,16 +167,9 @@ func request_BeaconValidator_GetBlock_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["slot"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "slot")
-	}
+	_, _ = val, ok
 
-	slot, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "slot", err)
-	}
-	protoReq.Slot = github_com_prysmaticlabs_eth2_types.Slot(slot)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -229,16 +194,9 @@ func local_request_BeaconValidator_GetBlock_0(ctx context.Context, marshaler run
 		_   = err
 	)
 
-	val, ok = pathParams["slot"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "slot")
-	}
+	_, _ = val, ok
 
-	slot, err := runtime.Uint64(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "slot", err)
-	}
-	protoReq.Slot = github_com_prysmaticlabs_eth2_types.Slot(slot)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)

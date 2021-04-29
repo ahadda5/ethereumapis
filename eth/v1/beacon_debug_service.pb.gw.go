@@ -51,16 +51,9 @@ func request_BeaconDebug_GetBeaconState_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
@@ -85,16 +78,9 @@ func local_request_BeaconDebug_GetBeaconState_0(ctx context.Context, marshaler r
 		_   = err
 	)
 
-	val, ok = pathParams["state_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state_id")
-	}
+	_, _ = val, ok
 
-	state_id, err := runtime.Bytes(val)
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state_id", err)
-	}
-	protoReq.StateId = (state_id)
+	_, _ = val, ok
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
