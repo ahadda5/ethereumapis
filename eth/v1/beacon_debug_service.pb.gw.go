@@ -14,7 +14,6 @@ import (
 	emptypb "github.com/golang/protobuf/ptypes/empty"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
-	github_com_prysmaticlabs_eth2_types "github.com/prysmaticlabs/eth2-types"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
@@ -32,7 +31,6 @@ var _ status.Status
 var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
-var _ = github_com_prysmaticlabs_eth2_types.Epoch(0)
 var _ = emptypb.Empty{}
 var _ = empty.Empty{}
 
@@ -41,16 +39,13 @@ func request_BeaconDebug_GetBeaconState_0(ctx context.Context, marshaler runtime
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetBeaconState(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -63,16 +58,13 @@ func local_request_BeaconDebug_GetBeaconState_0(ctx context.Context, marshaler r
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetBeaconState(ctx, &protoReq)

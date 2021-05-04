@@ -14,7 +14,6 @@ import (
 	emptypb "github.com/golang/protobuf/ptypes/empty"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
-	github_com_prysmaticlabs_eth2_types "github.com/prysmaticlabs/eth2-types"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
@@ -32,7 +31,6 @@ var _ status.Status
 var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
-var _ = github_com_prysmaticlabs_eth2_types.Epoch(0)
 var _ = emptypb.Empty{}
 var _ = empty.Empty{}
 
@@ -59,16 +57,13 @@ func request_BeaconChain_GetStateRoot_0(ctx context.Context, marshaler runtime.M
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetStateRoot(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -81,16 +76,13 @@ func local_request_BeaconChain_GetStateRoot_0(ctx context.Context, marshaler run
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetStateRoot(ctx, &protoReq)
@@ -103,16 +95,13 @@ func request_BeaconChain_GetStateFork_0(ctx context.Context, marshaler runtime.M
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetStateFork(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -125,16 +114,13 @@ func local_request_BeaconChain_GetStateFork_0(ctx context.Context, marshaler run
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetStateFork(ctx, &protoReq)
@@ -147,16 +133,13 @@ func request_BeaconChain_GetFinalityCheckpoints_0(ctx context.Context, marshaler
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetFinalityCheckpoints(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -169,16 +152,13 @@ func local_request_BeaconChain_GetFinalityCheckpoints_0(ctx context.Context, mar
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetFinalityCheckpoints(ctx, &protoReq)
@@ -191,22 +171,13 @@ func request_BeaconChain_GetValidator_0(ctx context.Context, marshaler runtime.M
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetValidator(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -219,22 +190,13 @@ func local_request_BeaconChain_GetValidator_0(ctx context.Context, marshaler run
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetValidator(ctx, &protoReq)
@@ -251,16 +213,13 @@ func request_BeaconChain_ListValidators_0(ctx context.Context, marshaler runtime
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -280,16 +239,13 @@ func local_request_BeaconChain_ListValidators_0(ctx context.Context, marshaler r
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -313,16 +269,13 @@ func request_BeaconChain_ListValidatorBalances_0(ctx context.Context, marshaler 
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -342,16 +295,13 @@ func local_request_BeaconChain_ListValidatorBalances_0(ctx context.Context, mars
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -375,22 +325,13 @@ func request_BeaconChain_ListCommittees_0(ctx context.Context, marshaler runtime
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -410,22 +351,13 @@ func local_request_BeaconChain_ListCommittees_0(ctx context.Context, marshaler r
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -445,16 +377,13 @@ func request_BeaconChain_GetBlockHeader_0(ctx context.Context, marshaler runtime
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetBlockHeader(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -467,16 +396,13 @@ func local_request_BeaconChain_GetBlockHeader_0(ctx context.Context, marshaler r
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetBlockHeader(ctx, &protoReq)
@@ -559,16 +485,13 @@ func request_BeaconChain_GetBlock_0(ctx context.Context, marshaler runtime.Marsh
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetBlock(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -581,16 +504,13 @@ func local_request_BeaconChain_GetBlock_0(ctx context.Context, marshaler runtime
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetBlock(ctx, &protoReq)
@@ -603,16 +523,13 @@ func request_BeaconChain_GetBlockRoot_0(ctx context.Context, marshaler runtime.M
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.GetBlockRoot(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -625,16 +542,13 @@ func local_request_BeaconChain_GetBlockRoot_0(ctx context.Context, marshaler run
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.GetBlockRoot(ctx, &protoReq)
@@ -647,16 +561,13 @@ func request_BeaconChain_ListBlockAttestations_0(ctx context.Context, marshaler 
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := client.ListBlockAttestations(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -669,16 +580,13 @@ func local_request_BeaconChain_ListBlockAttestations_0(ctx context.Context, mars
 	var metadata runtime.ServerMetadata
 
 	var (
-		val string
-		ok  bool
-		err error
-		_   = err
+		val     string
+		ok      bool
+		err     error
+		_, _, _ = val, ok, err
 	)
-
-	_, _ = val, ok
-
-	if err := runtime.PopulatePathParameters(&protoReq, pathParams, &utilities.DoubleArray{}); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	if err := runtime.PopulatePathParameters(&protoReq, pathParams); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "failed to populate path parameters: %v", err)
 	}
 
 	msg, err := server.ListBlockAttestations(ctx, &protoReq)
