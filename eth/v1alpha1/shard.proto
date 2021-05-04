@@ -1,0 +1,74 @@
+// Copyright 2020 Prysmatic Labs.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+
+package ethereum.eth.v1alpha1;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option csharp_namespace = "Ethereum.Eth.v1alpha1";
+option go_package = "github.com/prysmaticlabs/ethereumapis/eth/v1alpha1;eth";
+
+message DataCommitment {
+  // KZG10 commitment to the data.
+  bytes point = 1 [(gogoproto.moretags) = "ssz-size:\"48\""];
+  // Length of the data in samples.
+  uint64 length = 2;
+}
+
+message ShardBlobBodySummary {
+  // The actual data commitment.
+  DataCommitment commitment = 1;
+  // Proof that degree is lesser than commitment length.
+  bytes degree_proof = 2 [(gogoproto.moretags) = "ssz-size:\"48\""];
+  // Hash tree root as summary of the data field.
+  bytes data_root = 3 [(gogoproto.moretags) = "ssz-size:\"32\""];
+  // Hash tree root of latest beacon block that's before shard blob slot.
+  bytes beacon_block_root = 4 [(gogoproto.moretags) = "ssz-size:\"32\""];
+
+}
+
+message ShardBlobHeader {
+  // Slot and shard that this header is intended for.
+  uint64 slot = 1;
+  uint64 shard = 2;
+  ShardBlobBodySummary body_summary = 3;
+  // Proposer of the shard blob.
+  uint64 proposer_index = 4;
+}
+
+message SignedShardBlobHeader {
+  ShardBlobHeader message = 1;
+  bytes signature = 2 [(gogoproto.moretags) = "ssz-size:\"96\""];
+}
+
+message ShardBlobReference {
+  // Slot and shard that this reference is intended for.
+  uint64 slot = 1;
+  uint64 shard = 2;
+  // Hash tree root of the blob body summary.
+  bytes body_root = 3 [(gogoproto.moretags) = "ssz-size:\"32\""];
+  // Proposer of the shard blob.
+  uint64 proposer_index = 4;
+}
+
+message SignedShardBlobReference {
+  ShardBlobReference message = 1;
+  bytes signature = 2 [(gogoproto.moretags) = "ssz-size:\"96\""];
+}
+
+message ShardProposerSlashing {
+  SignedShardBlobReference signed_reference_1 = 1;
+  SignedShardBlobReference signed_reference_2 = 2;
+}
