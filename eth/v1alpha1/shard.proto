@@ -41,11 +41,11 @@ message ShardBlobBodySummary {
 
 message ShardBlobHeader {
   // Slot and shard that this header is intended for.
-  uint64 slot = 1;
+  uint64 slot = 1  [(gogoproto.casttype) = "github.com/prysmaticlabs/eth2-types.Slot"];
   uint64 shard = 2;
   ShardBlobBodySummary body_summary = 3;
   // Proposer of the shard blob.
-  uint64 proposer_index = 4;
+  uint64 proposer_index = 4  [(gogoproto.casttype) = "github.com/prysmaticlabs/eth2-types.ValidatorIndex"];
 }
 
 message SignedShardBlobHeader {
@@ -55,12 +55,12 @@ message SignedShardBlobHeader {
 
 message ShardBlobReference {
   // Slot and shard that this reference is intended for.
-  uint64 slot = 1;
+  uint64 slot = 1  [(gogoproto.casttype) = "github.com/prysmaticlabs/eth2-types.Slot"];
   uint64 shard = 2;
   // Hash tree root of the blob body summary.
   bytes body_root = 3 [(gogoproto.moretags) = "ssz-size:\"32\""];
   // Proposer of the shard blob.
-  uint64 proposer_index = 4;
+  uint64 proposer_index = 4  [(gogoproto.casttype) = "github.com/prysmaticlabs/eth2-types.ValidatorIndex"];
 }
 
 message SignedShardBlobReference {

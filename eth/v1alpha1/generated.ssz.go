@@ -3530,7 +3530,7 @@ func (s *ShardBlobHeader) MarshalSSZTo(buf []byte) (dst []byte, err error) {
 	dst = buf
 
 	// Field (0) 'Slot'
-	dst = ssz.MarshalUint64(dst, s.Slot)
+	dst = ssz.MarshalUint64(dst, uint64(s.Slot))
 
 	// Field (1) 'Shard'
 	dst = ssz.MarshalUint64(dst, s.Shard)
@@ -3544,7 +3544,7 @@ func (s *ShardBlobHeader) MarshalSSZTo(buf []byte) (dst []byte, err error) {
 	}
 
 	// Field (3) 'ProposerIndex'
-	dst = ssz.MarshalUint64(dst, s.ProposerIndex)
+	dst = ssz.MarshalUint64(dst, uint64(s.ProposerIndex))
 
 	return
 }
@@ -3558,7 +3558,7 @@ func (s *ShardBlobHeader) UnmarshalSSZ(buf []byte) error {
 	}
 
 	// Field (0) 'Slot'
-	s.Slot = ssz.UnmarshallUint64(buf[0:8])
+	s.Slot = github_com_prysmaticlabs_eth2_types.Slot(ssz.UnmarshallUint64(buf[0:8]))
 
 	// Field (1) 'Shard'
 	s.Shard = ssz.UnmarshallUint64(buf[8:16])
@@ -3572,7 +3572,7 @@ func (s *ShardBlobHeader) UnmarshalSSZ(buf []byte) error {
 	}
 
 	// Field (3) 'ProposerIndex'
-	s.ProposerIndex = ssz.UnmarshallUint64(buf[184:192])
+	s.ProposerIndex = github_com_prysmaticlabs_eth2_types.ValidatorIndex(ssz.UnmarshallUint64(buf[184:192]))
 
 	return err
 }
@@ -3593,7 +3593,7 @@ func (s *ShardBlobHeader) HashTreeRootWith(hh *ssz.Hasher) (err error) {
 	indx := hh.Index()
 
 	// Field (0) 'Slot'
-	hh.PutUint64(s.Slot)
+	hh.PutUint64(uint64(s.Slot))
 
 	// Field (1) 'Shard'
 	hh.PutUint64(s.Shard)
@@ -3604,7 +3604,7 @@ func (s *ShardBlobHeader) HashTreeRootWith(hh *ssz.Hasher) (err error) {
 	}
 
 	// Field (3) 'ProposerIndex'
-	hh.PutUint64(s.ProposerIndex)
+	hh.PutUint64(uint64(s.ProposerIndex))
 
 	hh.Merkleize(indx)
 	return
@@ -3703,7 +3703,7 @@ func (s *ShardBlobReference) MarshalSSZTo(buf []byte) (dst []byte, err error) {
 	dst = buf
 
 	// Field (0) 'Slot'
-	dst = ssz.MarshalUint64(dst, s.Slot)
+	dst = ssz.MarshalUint64(dst, uint64(s.Slot))
 
 	// Field (1) 'Shard'
 	dst = ssz.MarshalUint64(dst, s.Shard)
@@ -3716,7 +3716,7 @@ func (s *ShardBlobReference) MarshalSSZTo(buf []byte) (dst []byte, err error) {
 	dst = append(dst, s.BodyRoot...)
 
 	// Field (3) 'ProposerIndex'
-	dst = ssz.MarshalUint64(dst, s.ProposerIndex)
+	dst = ssz.MarshalUint64(dst, uint64(s.ProposerIndex))
 
 	return
 }
@@ -3730,7 +3730,7 @@ func (s *ShardBlobReference) UnmarshalSSZ(buf []byte) error {
 	}
 
 	// Field (0) 'Slot'
-	s.Slot = ssz.UnmarshallUint64(buf[0:8])
+	s.Slot = github_com_prysmaticlabs_eth2_types.Slot(ssz.UnmarshallUint64(buf[0:8]))
 
 	// Field (1) 'Shard'
 	s.Shard = ssz.UnmarshallUint64(buf[8:16])
@@ -3742,7 +3742,7 @@ func (s *ShardBlobReference) UnmarshalSSZ(buf []byte) error {
 	s.BodyRoot = append(s.BodyRoot, buf[16:48]...)
 
 	// Field (3) 'ProposerIndex'
-	s.ProposerIndex = ssz.UnmarshallUint64(buf[48:56])
+	s.ProposerIndex = github_com_prysmaticlabs_eth2_types.ValidatorIndex(ssz.UnmarshallUint64(buf[48:56]))
 
 	return err
 }
@@ -3763,7 +3763,7 @@ func (s *ShardBlobReference) HashTreeRootWith(hh *ssz.Hasher) (err error) {
 	indx := hh.Index()
 
 	// Field (0) 'Slot'
-	hh.PutUint64(s.Slot)
+	hh.PutUint64(uint64(s.Slot))
 
 	// Field (1) 'Shard'
 	hh.PutUint64(s.Shard)
@@ -3776,7 +3776,7 @@ func (s *ShardBlobReference) HashTreeRootWith(hh *ssz.Hasher) (err error) {
 	hh.PutBytes(s.BodyRoot)
 
 	// Field (3) 'ProposerIndex'
-	hh.PutUint64(s.ProposerIndex)
+	hh.PutUint64(uint64(s.ProposerIndex))
 
 	hh.Merkleize(indx)
 	return
