@@ -80,6 +80,7 @@ ssz_gen_marshal(
         "SignedVoluntaryExit",
         "Validator",
         "VoluntaryExit",
+        "PowBlock",
         "ExecutionPayload",
         "DataCommitment",
         "ShardBlobBodySummary",
